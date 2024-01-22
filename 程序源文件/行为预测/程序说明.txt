@@ -1,0 +1,15 @@
+data_process.m
+批量处理LEAP结果坐标数据
+计算关节夹角；
+比较角大小选择较小角；
+计算同一帧的两角度之差；
+计算上肢和下肢的距离差；
+计算相邻帧下肢的距离差；
+DATA_PROCESSING.m
+给成三点计算所围成的夹角角度；
+将大矩阵分割成cell形式的数组，用于LSTM的样本；
+生成categorical格式的数据，用于LSTM的标签集；
+LSTM.m
+长短期记忆网络程序
+要注意样本要cell格式，标签要logical格式，通过DATA_PROCESSING.m获得
+样本的长度即序列的长度，宽度即序列特征的个数，要改程序中的inputSize；numClasses即类别
